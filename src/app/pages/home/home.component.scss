@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Agora empilha os filhos na vertical */
+  align-items: center;    /* Centraliza horizontalmente */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  gap: 6rem;
+  padding: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  background-color: #ccc;
+}
+
+.map {
+  img{
+    width: 5.2rem;
+     height: 5.2rem;
+  }
+  text-align: center;
+  background: #72B8C4;
+  width: 7rem;
+  height: 7rem;
+}
+
+.tourism {
+  img{
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+  text-align: center;
+  background: #72B8C4;
+  width: 7rem;
+  height: 7rem;
+}
+
+.culture {
+  img{
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+  text-align: center;
+  background: #72B8C4;
+  width: 7rem;
+  height: 7rem;
+}
+
+.partners {
+  img{
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+  text-align: center;
+  background: #72B8C4;
+  width: 7rem;
+  height: 7rem;
+}
+
