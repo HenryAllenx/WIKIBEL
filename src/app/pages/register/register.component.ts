@@ -1,11 +1,33 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-register',
-  imports: [],
+  selector: 'app-cadastro',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule,],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  cadastroForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {
+    this.cadastroForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      usuario: ['', Validators.required],
+      senha: ['', [Validators.required, Validators.minLength(6)]],
+      telefone: ['', [Validators.required, Validators.pattern(/^\d{10,11}$/)]]
+    });
+  }
+
+  onSubmit() {
+    if (this.cadastroForm.valid) {
+      console.log('Dados do cadastro:', this.cadastroForm.value);
+      alert('Cadastro realizado com sucesso!');
+    } else {
+      alert('Preencha os campos corretamente.');
+    }
+  }
 }
