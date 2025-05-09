@@ -1,29 +1,37 @@
 
-<div class="container mt-4">
-    <h2>Cadastro</h2>
+
+<div class="register-wrapper" >
+<div class="register-area">
+    <h2>Cadastrar</h2>
     <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
-  
-      <div class="mb-3">
-        <label>Email</label>
-        <input type="email" formControlName="email" class="form-control" />
+
+      <label for="email" >Email</label>
+      <div class="input-box">
+        <img src="./assets/Mail.svg" alt="email">
+        <input  id="email" type="email" formControlName="email" class="email" placeholder="Email" />
       </div>
-  
-      <div class="mb-3">
-        <label>Nome de Usuário</label>
-        <input type="text" formControlName="usuario" class="form-control" />
+
+      <label  for="name">Nome de Usuário</label>
+      <div class="input-box">
+        <img src="./assets/User.svg" alt="lock">
+        <input id="name" type="text" formControlName="usuario" class="form-control" placeholder="Nome de Usuário" />
       </div>
-  
-      <div class="mb-3">
-        <label>Senha</label>
-        <input type="password" formControlName="senha" class="form-control" />
+
+      <label for="password" >Senha</label>
+      <div class="input-box">
+        <img src="./assets/Key.svg" alt="senha">
+        <input  id="password" type="password" formControlName="senha" class="password" placeholder="Senha" />
       </div>
-  
-      <div class="mb-3">
-        <label>Telefone</label>
-        <input type="text" formControlName="telefone" class="form-control" />
+
+      <label for="phone" >Telefone</label>
+      <div class="input-box">
+        <img src="./assets/Phone.svg" alt="lock">
+        <input id="phone"  type="number" formControlName="telefone" class="form-control" placeholder="Telefone" />
       </div>
-  
-      <button class="btn btn-primary" type="submit">Cadastrar</button>
+
+      <button class="register-button" type="submit">Cadastrar</button>
     </form>
+
+  <a>Ja possui uma conta?<span routerLink="/login">Entrar</span></a>
   </div>
-  
+</div>

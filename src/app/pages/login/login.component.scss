@@ -8,7 +8,7 @@
 }
 
 .login-area {
-  background: #056D88;
+  justify-content: center;
   padding: 2rem;
   border-radius: 0.5rem;
   display: flex;
@@ -21,44 +21,60 @@
 
 }
 
-
-input{
-  background: none;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  border-bottom: 1px solid #000;
-  padding: 0.5rem;
-  width: 100%;
-
-  &:focus{
-    outline: none;
-  }
+h1{
+  color: white;
 }
 
-input::placeholder{
-  color: black;
+a{
+  color: white;
 }
 
+span{
+  color: #2E4159;
+  font-size: 1.2rem;
+}
 
+label{
+  color: white;
+}
 
-.password, .profile{
-  margin-top: 5rem;
+.input-box {
   display: flex;
+  align-items: center;
+  width: 20rem;
+  margin-bottom: 1rem;
 
-  img{
-    width: 2rem;
-    height: 2rem;
-    border-top: transparent;
+  img {
+    width: 1.35rem;
+    height: 1.33rem;
+    background: white;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    object-fit: contain;
+    padding: 0.4rem;
     border-left: transparent;
-    border-right: transparent;
-    border-bottom: 1px solid #000;
+  }
 
+  input {
+    background: white;
+    border: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 
 button{
-  background: #72B8C4;
+  font-family: 'Oregano', cursive;
+  color: white;
+  background: #7289A6;
+  font-size: 1.5rem;
   border: none;
   margin-top: 4rem;
   width: 5rem;
