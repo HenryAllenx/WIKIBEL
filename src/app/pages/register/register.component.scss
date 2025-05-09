@@ -31,7 +31,7 @@
   img {
     width: 1.3rem;
     height: 1.3rem;
-    background: white;
+    background: #2E4159;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     object-fit: contain;
@@ -40,7 +40,8 @@
   }
 
   input {
-    background: white;
+    color: white;
+    background: #2E4159;
     border: none;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -54,11 +55,23 @@
   }
 }
 
+input::placeholder {
+  color: white;
+}
+
 span{
   color: #2E4159;
   font-size: 1.2rem;
 }
 
+a{
+  color: #2E4159;
+  font-size: 1.2rem;
+}
+
+h1{
+  color: #2E4159;
+}
 
 
 
@@ -73,4 +86,5 @@ button{
   height: 2.5rem;
   border-radius: 0.5rem;
   margin-left: 7rem;
+  font-size: 1.1rem;
 }

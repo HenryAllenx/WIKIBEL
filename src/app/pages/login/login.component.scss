@@ -22,11 +22,11 @@
 }
 
 h1{
-  color: white;
+  color: #2E4159;
 }
 
 a{
-  color: white;
+  color: #2E4159;
 }
 
 span{
@@ -34,9 +34,7 @@ span{
   font-size: 1.2rem;
 }
 
-label{
-  color: white;
-}
+
 
 .input-box {
   display: flex;
@@ -47,7 +45,7 @@ label{
   img {
     width: 1.35rem;
     height: 1.33rem;
-    background: white;
+    background: #2E4159;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     object-fit: contain;
@@ -56,7 +54,8 @@ label{
   }
 
   input {
-    background: white;
+    color: white;
+    background: #2E4159;
     border: none;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -67,7 +66,13 @@ label{
     &:focus {
       outline: none;
     }
+
+
   }
+}
+
+input::placeholder {
+  color: white;
 }
 
 button{
