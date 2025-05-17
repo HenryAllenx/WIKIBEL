@@ -1,0 +1,44 @@
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centraliza os botões na horizontal */
+  background-color: #2E4159; /* opcional: cor de fundo */
+  padding: 10px 0; /* espaço interno */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* sombra superior opcional */
+}
+
+.button-box {
+  display: flex;
+  gap: 2rem;
+
+  button {
+    border-radius: 2rem;
+    border: none;
+    background-color: #2E4159;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background-color: #056D88;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: none;
+    }
+  }
+}
+
+img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+

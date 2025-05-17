@@ -1,0 +1,89 @@
+/* Espaço restante da tela, exceto header */
+.login-wrapper {
+  height: 100%; // ajuste se o header tiver altura diferente
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.login-area {
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  height: 34rem;
+  margin-bottom: 5rem;
+
+
+}
+
+h1{
+  color: #2E4159;
+}
+
+a{
+  color: #2E4159;
+}
+
+span{
+  color: #2E4159;
+  font-size: 1.2rem;
+}
+
+
+
+.input-box {
+  display: flex;
+  align-items: center;
+  width: 20rem;
+  margin-bottom: 1rem;
+
+  img {
+    width: 1.35rem;
+    height: 1.33rem;
+    background: #2E4159;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    object-fit: contain;
+    padding: 0.4rem;
+    border-left: transparent;
+  }
+
+  input {
+    color: white;
+    background: #2E4159;
+    border: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+
+
+  }
+}
+
+input::placeholder {
+  color: white;
+}
+
+button{
+  font-family: 'Oregano', cursive;
+  color: white;
+  background: #7289A6;
+  font-size: 1.5rem;
+  border: none;
+  margin-top: 4rem;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+}
+
