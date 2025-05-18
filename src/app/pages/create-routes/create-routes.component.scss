@@ -1,8 +1,7 @@
 
-.culture-page{
+.tourism-page{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
   margin-top: 5rem;
@@ -22,9 +21,7 @@
 
 
   }
-  input:focus{
-    outline: none;
-  }
+
 
   img{
     border: 1px solid grey;
@@ -34,7 +31,35 @@
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
 
+  }
+}
 
+input:focus{
+  outline: none;
+}
+
+.input-box-name{
+  display: flex;
+  flex-direction: column;
+  input{
+    width: 20rem;
+    height: 2.3rem;
+    background: white;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    transition: height 0.3s ease-in-out;
+
+
+
+  }
+
+  img{
+    border: 1px solid grey;
+    width: 2rem;
+    height: 2.45rem;
+    border-left: transparent;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 
   }
 }
@@ -55,12 +80,22 @@ button{
   border: 1px solid grey;
   border-radius: 1rem;
   transition: height 0.3s ease-in-out;
-  margin-bottom: 1rem;
 
-  &:hover {
-    height: 5rem;
+  &:hover{
+    background: #F2F2F2;
   }
+
 }
+
+button.selected {
+  background-color: #d1f0e8;
+  border: 2px solid #0ca678;
+  font-weight: bold;
+  color: #0b5f47;
+  position: relative;
+}
+
+
 
 a{
   color: #2E4159;

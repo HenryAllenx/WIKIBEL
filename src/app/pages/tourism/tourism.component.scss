@@ -1,21 +1,94 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.add-route{
+.add-route {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  border: 1px solid black;
+  border: 3px dashed #056D88;
   width: 25rem;
   height: 3rem;
   border-radius: 0.5rem;
 }
 
-button{
-  width: 100%;
+button {
+  color: #056D88;
+  width: 23rem;
   border-radius: 0.5rem;
   border: none;
+  background: transparent;
+}
+
+span{
+  font-family: Arial,sans-serif;
+}
+
+.line {
+  background: #2E4159;
+  width: 98%;
+  height: 1px;
+}
+
+.title {
+  color: #056D88;
+  width: 25rem;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.rotas-list {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* espaçamento entre botões */
+}
+
+.rotas-list .rota-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  width: 23rem;
+  height: 3.5rem;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid grey;
+  border-radius: 1rem;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+}
+
+.rota-nome {
+  color: #056D88;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+  flex: 1;
+  cursor: pointer;
+}
+
+.excluir-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.excluir-btn:hover {
+  transform: scale(1.2);
 }

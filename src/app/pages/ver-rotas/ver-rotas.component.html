@@ -1,0 +1,9 @@
+<div class="container" >
+
+<h2>{{ rota?.nome }}</h2>
+<ul>
+  <li *ngFor="let ponto of rota?.pontos">{{ ponto.nome }}</li>
+</ul>
+
+  <a routerLink="/turismo" >Voltar</a>
+</div>
