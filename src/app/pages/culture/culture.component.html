@@ -1,0 +1,12 @@
+<div class="culture-page">
+  <div class="input-box">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar">
+    <img src="assets/search.svg" alt="buscar">
+  </div>
+
+  <div class="btn-box">
+    <button *ngFor="let item of filteredItems()" [routerLink]="getRoute(item)">
+      <a>{{ item }}</a>
+    </button>
+  </div>
+</div>

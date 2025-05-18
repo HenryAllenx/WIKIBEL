@@ -1,0 +1,67 @@
+
+.culture-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.input-box{
+  display: flex;
+  input{
+    width: 20rem;
+    height: 2.3rem;
+    background: white;
+    border: 1px solid grey;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-right: transparent;
+    transition: height 0.3s ease-in-out;
+
+
+  }
+  input:focus{
+    outline: none;
+  }
+
+  img{
+    border: 1px solid grey;
+    width: 2rem;
+    height: 2.45rem;
+    border-left: transparent;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+
+
+  }
+}
+
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+button{
+  width: 25rem;
+  height: 3.5rem;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid grey;
+  border-radius: 1rem;
+  transition: height 0.3s ease-in-out;
+
+
+  &:hover {
+    height: 5rem;
+  }
+}
+
+a{
+  color: #2E4159;
+  font-family: 'Segoe UI', sans-serif;
+}
