@@ -24,6 +24,10 @@ export const routes: Routes = [
     loadComponent:()=> import('./pages/partners/partners.component')
   },
   {
+    path:'turismo',
+    loadComponent: ()=> import('./pages/tourism/tourism.component')
+  },
+  {
     path:'culture',
     loadComponent: ()=> import('./pages/culture/culture.component')
   },
