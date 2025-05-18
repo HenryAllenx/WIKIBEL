@@ -6,7 +6,7 @@ const STORAGE_KEY = 'rotas_salvas';
 @Injectable({
   providedIn: 'root'
 })
-export default class RotasService {
+export class RotasService {
   private rotas: Rota[] = [];
 
   constructor() {
