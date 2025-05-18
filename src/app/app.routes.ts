@@ -28,6 +28,14 @@ export const routes: Routes = [
     loadComponent: ()=> import('./pages/tourism/tourism.component')
   },
   {
+    path:'criar-rotas',
+    loadComponent: ()=>import('./pages/create-routes/create-routes.component')
+  },
+  {
+    path: 'ver-rota/:id',
+    loadComponent: () => import('./pages/ver-rotas/ver-rotas.component')
+  },
+  {
     path:'culture',
     loadComponent: ()=> import('./pages/culture/culture.component')
   },

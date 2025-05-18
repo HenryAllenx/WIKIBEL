@@ -1,7 +1,22 @@
 <div class="container">
-
   <div class="add-route">
-    <button> Adicionar nova Rota </button>
+    <button routerLink="/criar-rotas">Adicionar nova Rota</button>
   </div>
+
+  <div class="line"></div>
+
+  <div class="title">
+    <h1>Rotas Existentes</h1>
+  </div>
+
+  <div class="rotas-list">
+    <div class="rota-item" *ngFor="let rota of rotas">
+    <span class="rota-nome" (click)="abrirRota(rota)">
+      {{ rota.nome }}
+    </span>
+      <button class="excluir-btn" (click)="excluirRota(rota)">✕</button>
+    </div>
+  </div>
+
 
 </div>
