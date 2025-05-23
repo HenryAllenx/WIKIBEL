@@ -76,6 +76,10 @@ input::placeholder {
 }
 
 button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 7rem;
   font-family: 'Oregano', cursive;
   color: white;
   background: #7289A6;

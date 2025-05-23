@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://wikibel.onrender.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

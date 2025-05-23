@@ -2,18 +2,21 @@
   <div class="login-area">
     <h1>Login</h1>
 
-    <div class="input-box">
-      <img src="./assets/Mail.svg" alt="profile">
-      <input type="text" placeholder="Email">
-    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-    <div class="input-box">
-      <img src="./assets/Key.svg" alt="lock">
-      <input type="password" placeholder="Senha">
-    </div>
+      <div class="input-box">
+        <img src="assets/Mail.svg" alt="profile">
+        <input type="email" formControlName="email" placeholder="Email" />
+      </div>
 
-    <button>Login</button>
+      <div class="input-box">
+        <img src="assets/Key.svg" alt="lock">
+        <input type="password" formControlName="password" placeholder="Senha" />
+      </div>
 
-    <a>Não tem conta? Crie uma agora  <span routerLink="/register" > Registrar</span></a>
+      <button type="submit">Login</button>
+    </form>
+
+    <a>Não tem conta? Crie uma agora <span routerLink="/register">Registrar</span></a>
   </div>
 </div>
