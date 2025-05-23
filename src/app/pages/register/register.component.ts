@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {RouterLink} from '@angular/router';
+import {ApiService} from '../../services/api.service';
+import {Iregister} from '../../models/user';
 
 
 @Component({
@@ -14,19 +16,28 @@ import {RouterLink} from '@angular/router';
 export class RegisterComponent {
   cadastroForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private apiService: ApiService) {
     this.cadastroForm = this.fb.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      usuario: ['', Validators.required],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
-      telefone: ['', [Validators.required, Validators.pattern(/^\d{10,11}$/)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   onSubmit() {
     if (this.cadastroForm.valid) {
-      console.log('Dados do cadastro:', this.cadastroForm.value);
-      alert('Cadastro realizado com sucesso!');
+      const payload = {
+        token:'',
+        name: this.cadastroForm.value.name,
+        email: this.cadastroForm.value.email,
+        password: this.cadastroForm.value.password,
+        is_premium: false  // ou outro valor padrão se necessário
+      };
+
+      this.apiService.register(payload).subscribe(
+        response => console.log('Sucesso', response),
+        error => console.error('Erro', error)
+      );
     } else {
       alert('Preencha os campos corretamente.');
     }
