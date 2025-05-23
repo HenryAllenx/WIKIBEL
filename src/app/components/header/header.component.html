@@ -1,15 +1,21 @@
 <div class="header">
   <div class="logo-box">
-    <img class="img-settings" src="./assets/Settings.svg" alt="configurações">
-
+    <img class="img-settings" src="assets/home.svg" alt="configurações" routerLink="/home">
 
     <div class="center-content">
-      <span class="logo-text" routerLink="/home" >WIKIBEL</span>
+      <span class="logo-text" routerLink="/home">WIKIBEL</span>
       <img class="img-logo" src="./assets/LogoBranca.png" alt="logo central">
     </div>
 
-    <img class="img-user" src="./assets/UserHeader.svg" alt="usuário" routerLink="/login">
+    <!-- Se logado: mostra nome | Se não: mostra ícone com link para login -->
+    <ng-container *ngIf="username; else showLoginIcon">
+      <div class="user-name">
+        {{ username }}
+      </div>
+    </ng-container>
+
+    <ng-template #showLoginIcon>
+      <img class="img-user" src="./assets/UserHeader.svg" alt="usuário" routerLink="/login">
+    </ng-template>
   </div>
 </div>
-
-<!--<img class="img-logo" src="./assets/logo.png" alt="logo">-->

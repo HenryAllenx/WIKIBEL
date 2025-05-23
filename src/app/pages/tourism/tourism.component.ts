@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
-import RotasService from '../../services/rotas.service';
+import {RotasService} from '../../services/rotas.service';
 import {Rota} from '../../models/rotas';
 import {NgForOf} from '@angular/common';
 

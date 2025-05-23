@@ -1,28 +1,14 @@
-<div class="card">
-    <div>
-    <h1 class="titulo">Basílica Santuário Nossa Senhora de Nazaré</h1>
-    <div class="BasilicaContainer">
-    <img src="https://comshalom.org/wp-content/uploads/2023/04/photo1682089462-1-480x320.jpeg" alt="Picture" class="basilicaPicture" >
-    </div>
-    <hr class="linha" />
-    <div class="conteudo">
-        <p id="paragrafo">No início do século XX, a cidade viveria nova polêmica a respeito da introdução de torres em igrejas cujos projetos não as previam.
-             A Basílica de Nazaré, projetada em 1909,sobre o local onde foi achada a imagem da Santa, a Basílica Santuário de Nossa Senhora de Nazaré hoje é um 
-             dos lugares mais importantes e sagrados para os paraenses, por Gino Coppedé,arquiteto italiano,e pelo engenheiro Giuseppe Predasso a partir de encomenda
-             dos padres barnabitas da casa de Gênova, foi uma proposta cuidadosamente feita por seu arquiteto para demonstrar o domínio de arquitetura histórica. 
-             Concebida como uma basílica, nos moldes da de São Paulo Fora dos Muros, em Roma, a igreja não foi desenhada com torres. Estas foram impostas por uma 
-             exigência da Comissão Municipal de Obras de Belém, baseando-se no princípio de que as igrejas do mundo português, no qual culturalmente Belém ainda era 
-             inserida, deveriam ter duas torres. O templo, inaugurado em 1923 e único santuário na Amazônia, hoje abriga a imagem original encontrada no início do século XVIII.
-        </p>
-      <div class="Horario">
-        <h2>Horario de Funcionamento</h2>
-        <p>Segunda a Sexta: 06:00-21:00 </p>
-        <p>Sabado: 06:00-20:00</p>
-        <p>Domingo: 06:00-22:00</p>
-      </div>
-      <div class="mapa">
-        <h1>Mapa</h1>
-        <img  src="https://www.gov.br/mj/pt-br/assuntos/noticias/prf-participa-da-operacao-cirio-de-nazare/itinerariocirio.jpg" alt="Picture" class="basilicaPicture" > 
-      </div>
-    </div>
-  </div>
+<div *ngIf="monumento">
+  <h1>{{ monumento.name }}</h1>
+
+  <img
+    [src]="'data:image/png;base64,' + monumento.image"
+    alt="{{ monumento.name }}"
+    style="width: 26.9rem; height: 25rem;" />
+
+  <p><strong>Ano de Fundação:</strong> {{ monumento.founding_year }}</p>
+  <p><strong>Bairro:</strong> {{ monumento.district }}</p>
+  <p><strong>Descrição:</strong> {{ monumento.description }}</p>
+  <p><strong>Horário de Funcionamento:</strong> {{ monumento.open_hours }}</p>
+</div>
+

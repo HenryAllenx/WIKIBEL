@@ -1,45 +1,14 @@
-<div class="ForteDoPresepio">
-    <div class="tittle">
-        <h1>Forte do Presepio</h1>
-    </div>
-    <div class="ForteContainer">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Forte_do_Castelo_-_Bel%C3%A9m%2C_Par%C3%A1.JPG/2560px-Forte_do_Castelo_-_Bel%C3%A9m%2C_Par%C3%A1.JPG" alt="Picture" class="FortePicture">
-    </div>
-    <hr class="line" />
-    <div class="Conteudo">
-        <p id="firstParagraph">
-             <strong>
-        Franceses, holandeses e ingleses circulavam com certa regularidade, desde a metade do século XVI. Os europeus aventuravam-se pelo interior 
-        negociando com os índios, erguendo fortins precários que o tempo destruía com facilidade. Sua presença, denunciada por observadores portugueses, motivou a
-        decisão de assegurar o domínio do rio Amazonas, logo após a cidade de São Luís ter sido libertada da dominação francesa, no final de 1615. 
-        A expedição, capitaneada por Francisco Castelo Branco como capitão-mor, 
-        montada com esse objetivo, chega em 12 de janeiro de 1616. Ao forte erguido em seguida foi dado o nome de Presépio de Belém, 
-        em lembrança à data de saída da frota: o dia de Natal.
-        </strong>
-    </p>
-    
-    <p id="secondParagraph">
-        <strong>
-        A escolha do sítio, ainda que criticada por muitos autores, revela a predileção dos colonizadores por pontos 
-        altos e facilmente defensáveis, atitude adotada pelos portugueses em grande parte dos núcleos de importância estratégica no período colonial. 
-        A plataforma levemente elevada – onde se estabelece o forte e onde mais tarde se desenvolveria a cidade – ficava quase isolada das áreas vizinhas 
-        por um extenso pântano chamado Piri pelos habitantes nativos. 
-        Cercada pela baía de Guajará e pelo rio Guamá, Belém se desenvolve protegida por essa situação, na qual o 
-        forte desempenha um papel simbólico, mais que efetivo, em sua defesa.
-        </strong>
-    </p>
+<div *ngIf="monumento">
+  <h1>{{ monumento.name }}</h1>
 
-        <h4 id="year">Ano de Fundação / Year of Foundation: 1916</h4>
-        <div class="time">
-            <h2>Horário de Funcionamento / Opening Hours</h2>
-            <strong> 
-            <p>Segunda-feira / Monday: Fechado / Closed </p>
-            <p>Terça a Quinta / Tuesday to Thursday: 09:00 - 14:00</p>
-            <p>Sexta a Domingo / Friday to Sunday: 09:00 – 17:00</p>
-            </strong>
-        </div>
-        <div class="map">
-            <h1>mapa</h1>
-        </div>
-    </div>
+  <img
+    [src]="'data:image/png;base64,' + monumento.image"
+    alt="{{ monumento.name }}"
+    style="width: 26.9rem; height: 25rem;" />
+
+  <p><strong>Ano de Fundação:</strong> {{ monumento.founding_year }}</p>
+  <p><strong>Bairro:</strong> {{ monumento.district }}</p>
+  <p><strong>Descrição:</strong> {{ monumento.description }}</p>
+  <p><strong>Horário de Funcionamento:</strong> {{ monumento.open_hours }}</p>
 </div>
+
