@@ -14,27 +14,45 @@ import {NgForOf} from '@angular/common';
   styleUrl: './tourism.component.scss'
 })
 export default class TourismComponent implements OnInit{
-
   rotas: Rota[] = [];
+  excluindo: boolean = false;
 
-  constructor(private rotasService: RotasService, private router: Router) {}
+  constructor(protected rotasService: RotasService, private router: Router) {}
 
   ngOnInit() {
-    this.rotas = this.rotasService.obterRotas();
+    this.rotasService.obterRotas().subscribe({
+      next: (rotas) => {
+        this.rotas = rotas;
+        console.log('Rotas retornadas pela API:', rotas);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar rotas:', err);
+        alert('Erro ao carregar rotas.');
+      }
+    });
   }
 
   abrirRota(rota: Rota) {
     this.router.navigate(['/ver-rota', rota.id]);
   }
-
   excluirRota(rota: Rota) {
-    const confirmado = confirm(`Tem certeza que deseja excluir a rota "${rota.nome}"?`);
+    const confirmado = confirm(`Tem certeza que deseja excluir a rota "${rota.name || 'Rota sem nome'}"?`);
     if (confirmado) {
-      this.rotasService.removerRota(rota.id);
-      this.rotas = this.rotasService.obterRotas(); // recarrega da memória atualizada
+      console.log(`Tentando excluir rota com ID ${rota.id}`);
+      this.excluindo = true;
+      this.rotasService.removerRota(rota.id).subscribe({
+        next: () => {
+          console.log(`Rota ${rota.id} excluída com sucesso.`);
+          this.ngOnInit();
+        },
+        error: (err) => {
+          console.error('Erro ao excluir rota:', err);
+          alert('Erro ao excluir rota: ' + (err.message || 'Verifique o console para mais detalhes.'));
+        },
+        complete: () => {
+          this.excluindo = false;
+        }
+      });
     }
   }
-
-
-
 }
