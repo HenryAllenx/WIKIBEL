@@ -1,11 +1,9 @@
 <div class="tourism-page">
-
   <h1>Adicionando pontos</h1>
   <div class="input-box">
-    <input placeholder="buscar">
-    <img src="assets/search.svg" alt="buscar">
+    <input placeholder="buscar" [(ngModel)]="filtro" />
+    <img src="assets/search.svg" alt="buscar" />
   </div>
-
 
   <div class="input-box-name">
     <label for="name">Insira o nome para rota:</label>
@@ -13,11 +11,20 @@
   </div>
 
   <div class="btn-box">
-    <button *ngFor="let ponto of pontosDisponiveis" (click)="togglePonto(ponto)" [class.selected]="estaSelecionado(ponto)">
+    <button
+      *ngFor="let ponto of pontosFiltrados"
+      (click)="togglePonto(ponto)"
+      [class.selected]="estaSelecionado(ponto)"
+    >
       {{ ponto.nome }}
     </button>
-
   </div>
 
-  <button (click)="salvar()" class="saveButton" >Salvar</button>
+  <button
+    (click)="salvar()"
+    class="saveButton"
+    [disabled]="!nomeRota.trim() || pontosSelecionados.length === 0"
+  >
+    Salvar
+  </button>
 </div>

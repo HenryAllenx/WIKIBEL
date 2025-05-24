@@ -1,9 +1,28 @@
-<div class="container" >
+<div class="container">
+  <h1>Detalhes da Rota</h1>
 
-<h2>{{ rota?.nome }}</h2>
-<ul>
-  <li *ngFor="let ponto of rota?.pontos">{{ ponto.nome }}</li>
-</ul>
+  <div *ngIf="rota; else rotaNaoEncontrada">
+    <h2>{{ rotasService.getNomeDaRota(rota.id) }}</h2>
+    <p>ID da Rota: {{ rota.id }}</p>
+    <p>ID do Membro: {{ rota.member_id }}</p>
 
-  <a routerLink="/turismo" >Voltar</a>
+    <h3>Monumentos Associados</h3>
+    <div *ngIf="monumentos.length > 0; else semMonumentos">
+      <ul>
+        <li *ngFor="let monumento of monumentos">
+          <strong>{{ monumento.name || 'Monumento sem nome' }}</strong>
+          <p>{{ monumento.description || 'Sem descrição' }}</p>
+        </li>
+      </ul>
+    </div>
+    <ng-template #semMonumentos>
+      <p>Nenhum monumento associado a esta rota.</p>
+    </ng-template>
+  </div>
+
+  <ng-template #rotaNaoEncontrada>
+    <p>Rota não encontrada.</p>
+  </ng-template>
+
+  <button (click)="voltar()">Voltar</button>
 </div>

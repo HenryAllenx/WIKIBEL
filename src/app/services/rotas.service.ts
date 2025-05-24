@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Rota} from '../models/rotas';
+import {Observable} from 'rxjs';
+import {ApiService} from './api.service';
 
 const STORAGE_KEY = 'rotas_salvas';
 
@@ -9,34 +11,23 @@ const STORAGE_KEY = 'rotas_salvas';
 export class RotasService {
   private rotas: Rota[] = [];
 
-  constructor() {
-    this.loadRotas();
+  constructor(private apiService: ApiService) {}
+
+  adicionarRota(novaRota: Rota): Observable<any> {
+    return this.apiService.criarRota(novaRota);
   }
 
-  private loadRotas() {
-    const json = localStorage.getItem(STORAGE_KEY);
-    if (json) {
-      this.rotas = JSON.parse(json);
-    } else {
-      this.rotas = [];
-    }
+  obterRotas(): Observable<Rota[]> {
+    return this.apiService.getRoute();
   }
 
-  private saveRotas() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.rotas));
+  getNomeDaRota(id: number): string {
+    return localStorage.getItem(`nomeRota_${id}`) || 'Rota sem nome';
   }
 
-  obterRotas(): Rota[] {
-    return [...this.rotas]; // retorna cópia para evitar mutação direta
+  removerRota(routeId: number): Observable<any> {
+    return this.apiService.removerRota(routeId);
   }
 
-  adicionarRota(novaRota: Rota): void {
-    this.rotas.push(novaRota);
-    this.saveRotas();
-  }
-  removerRota(id: string): void {
-    this.rotas = this.rotas.filter(r => r.id !== id); // atualiza também em memória
-    this.saveRotas();
-  }
 
 }

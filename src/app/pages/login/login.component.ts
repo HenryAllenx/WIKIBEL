@@ -32,22 +32,31 @@ export default class LoginComponent {
   onLogin() {
     if (this.loginForm.valid) {
       const credentials: Ilogin = this.loginForm.value;
-      console.log('Credenciais enviadas:', credentials); // ✅ veja aqui
 
       this.apiService.login(credentials).subscribe({
         next: (res) => {
-          const token = res?.access_token;
-          if (token) {
-            localStorage.setItem('auth_token', token);
-            this.router.navigate(['/']);
+          console.log('Resposta do login:', res);
+
+          const token = res.token || res.access_token;
+          const userId = res.id;
+
+          if (token && userId) {
+            localStorage.setItem('token', token);
+            localStorage.setItem('usuario_id', userId.toString()); // ⬅️ salva o ID
+            console.log('Token e ID salvos:', token, userId);
+
+            this.router.navigate(['/home']);
+          } else {
+            alert('Erro: token ou ID não recebido.');
           }
         },
         error: (err) => {
           console.error('Erro no login:', err);
-          alert('Erro ao fazer login. Verifique seu e-mail e senha.');
+          alert('Falha no login. Verifique suas credenciais.');
         }
       });
     }
   }
+
 
 }

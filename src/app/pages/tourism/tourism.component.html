@@ -11,12 +11,10 @@
 
   <div class="rotas-list">
     <div class="rota-item" *ngFor="let rota of rotas">
-    <span class="rota-nome" (click)="abrirRota(rota)">
-      {{ rota.nome }}
-    </span>
+      <span class="rota-nome" (click)="abrirRota(rota)">
+        {{ rota.name || 'Rota sem nome' }}
+      </span>
       <button class="excluir-btn" (click)="excluirRota(rota)">✕</button>
     </div>
   </div>
-
-
 </div>
