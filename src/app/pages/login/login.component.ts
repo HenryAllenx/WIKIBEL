@@ -4,6 +4,9 @@ import {Router, RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {ApiService} from '../../services/api.service';
 import {Ilogin} from '../../models/user';
+import {AuthService} from '../../services/auth.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
@@ -22,6 +25,7 @@ export default class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private apiService: ApiService,
+    private authService: AuthService,
     private router: Router
   ) {
     this.loginForm = this.fb.group({
@@ -29,6 +33,7 @@ export default class LoginComponent {
       password: ['', Validators.required]
     });
   }
+
   onLogin() {
     if (this.loginForm.valid) {
       const credentials: Ilogin = this.loginForm.value;
@@ -38,25 +43,32 @@ export default class LoginComponent {
           console.log('Resposta do login:', res);
 
           const token = res.token || res.access_token;
-          const userId = res.id;
+          // Extrair userId do campo 'sub' do token JWT
+          const userId = token ? JSON.parse(atob(token.split('.')[1])).sub : null;
 
           if (token && userId) {
-            localStorage.setItem('token', token);
-            localStorage.setItem('usuario_id', userId.toString()); // ⬅️ salva o ID
-            console.log('Token e ID salvos:', token, userId);
-
+            this.authService.login(token, userId);
+            console.log('Token e ID salvos via AuthService:', token, userId);
             this.router.navigate(['/home']);
           } else {
-            alert('Erro: token ou ID não recebido.');
+            Swal.fire({
+              icon: 'error',
+              title: 'Erro',
+              text: 'Token ou ID não recebido.',
+              confirmButtonColor: '#d33'
+            });
           }
         },
         error: (err) => {
           console.error('Erro no login:', err);
-          alert('Falha no login. Verifique suas credenciais.');
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro no login',
+            text: 'E-mail ou senha inválidos.',
+            confirmButtonColor: '#d33'
+          });
         }
       });
     }
   }
-
-
 }
