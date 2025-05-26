@@ -122,7 +122,11 @@ export const routes: Routes = [
   {
     path:'Ver-o-Peso',
     loadComponent:()=> import('./pages/ver-o-peso/ver-o-peso.component')
-  }
+  },
+  {
+    path:'logout',
+    loadComponent: () => import('./pages/logout/logout.component').then(m => m.LogoutComponent)
+  },
 
 ];
 

@@ -79,8 +79,4 @@ export class ApiService {
       timeout(30000) // Timeout de 30 segundos
     );
   }
-
-
-
-
 }
