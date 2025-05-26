@@ -8,7 +8,7 @@ export const routes: Routes = [
 
   },
   {
-    path: 'home', loadComponent: () => import('./pages/home/home.component').then(m => m.default), canActivate: [authGuard]
+    path: 'home', loadComponent: () => import('./pages/home/home.component').then(m => m.default)
   },
   {
     path: 'about-us',
@@ -17,6 +17,10 @@ export const routes: Routes = [
   {
     path:'login',
     loadComponent: () => import('./pages/login/login.component')
+  },
+  {
+    path:'config',
+    loadComponent: () => import('./pages/config/config.component'),
   },
   {
     path:'register',
@@ -49,7 +53,7 @@ export const routes: Routes = [
   },
   {
     path:'Casa-11-Janelas',
-    loadComponent:()=> import('./pages/casa-janelas/casa-janelas.component')
+    loadComponent:()=> import('./pages/config/casa-janelas/casa-janelas.component')
   },
   {
     path:'Ver-o-Rio',
