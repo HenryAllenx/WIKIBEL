@@ -131,6 +131,10 @@ export const routes: Routes = [
     path:'logout',
     loadComponent: () => import('./pages/logout/logout.component').then(m => m.LogoutComponent)
   },
+  {
+    path:'missao',
+    loadComponent:()=> import('./pages/missao/missao.component').then(m => m.MissaoComponent)
+  },
 
 ];
 
