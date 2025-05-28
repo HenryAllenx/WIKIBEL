@@ -135,6 +135,10 @@ export const routes: Routes = [
     path:'missao',
     loadComponent:()=> import('./pages/missao/missao.component').then(m => m.MissaoComponent)
   },
+  {
+    path:'dicionario',
+    loadComponent:()=> import('./pages/dicionario/dicionario.component').then(m => m.DicionarioComponent)
+  },
 
 ];
 
