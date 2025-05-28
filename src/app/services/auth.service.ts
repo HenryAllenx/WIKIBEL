@@ -24,6 +24,8 @@ export class AuthService {
     localStorage.setItem('token', token);
     localStorage.setItem('usuario_id', userId);
     this.isAuthenticated.next(true);
+
+    localStorage.removeItem('fotosMissao');
   }
 
   // Método de logout

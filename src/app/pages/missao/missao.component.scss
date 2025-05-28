@@ -1,0 +1,316 @@
+$primary-color: #2c5aa0;
+$secondary-color: #f39c12;
+$success-color: #27ae60;
+$danger-color: #e74c3c;
+$light-gray: #f8f9fa;
+$dark-gray: #6c757d;
+$white: #ffffff;
+$shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Container principal
+.missao-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+  }
+}
+
+// Título principal
+h2 {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-md;
+  }
+}
+
+// Contador de progresso
+.progresso {
+  background: linear-gradient(135deg, $primary-color, lighten($primary-color, 10%));
+  color: $white;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  box-shadow: $shadow;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: $spacing-sm $spacing-md;
+  }
+}
+
+// Container de cada ponto turístico
+.ponto-turistico {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow;
+  border-left: 4px solid $secondary-color;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  h3 {
+    color: $primary-color;
+    margin: 0 0 $spacing-sm 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  p {
+    color: $dark-gray;
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+  }
+}
+
+// Botões
+.btn {
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.btn-primary {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+    color: $white;
+
+    &:hover {
+      background: linear-gradient(135deg, darken($primary-color, 5%), darken($primary-color, 15%));
+    }
+  }
+
+  &.btn-secondary {
+    background: linear-gradient(135deg, $secondary-color, darken($secondary-color, 10%));
+    color: $white;
+
+    &:hover {
+      background: linear-gradient(135deg, darken($secondary-color, 5%), darken($secondary-color, 15%));
+    }
+  }
+}
+
+// Seção de upload de foto
+.foto-upload {
+  background: $light-gray;
+  padding: $spacing-md;
+  border-radius: 8px;
+  margin: $spacing-md 0;
+  border: 2px dashed #ddd;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  input[type="file"] {
+    width: 100%;
+    padding: $spacing-sm;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: $white;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+}
+
+// Foto registrada
+.foto-registrada {
+  background: linear-gradient(135deg, $success-color, lighten($success-color, 10%));
+  color: $white;
+  padding: $spacing-md;
+  border-radius: 8px;
+  margin: $spacing-md 0;
+  text-align: center;
+
+  p {
+    margin: 0 0 $spacing-sm 0;
+    font-weight: 600;
+    color: $white !important;
+  }
+
+  img {
+    border-radius: 8px;
+    box-shadow: $shadow;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid $white;
+  }
+}
+
+// Separador
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: $spacing-xl 0;
+}
+
+// Missão concluída
+.missao-concluida {
+  background: linear-gradient(135deg, $success-color, lighten($success-color, 15%));
+  color: $white;
+  padding: $spacing-xl;
+  border-radius: $border-radius;
+  text-align: center;
+  margin-top: $spacing-xl;
+  box-shadow: $shadow;
+  animation: fadeInUp 0.6s ease-out;
+
+  h2 {
+    color: $white !important;
+    margin-bottom: $spacing-md;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  p {
+    color: rgba($white, 0.9) !important;
+    font-size: 1.1rem;
+    margin-bottom: $spacing-lg;
+  }
+
+  .cupom {
+    background: $white;
+    color: $success-color;
+    padding: $spacing-md $spacing-lg;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px dashed $success-color;
+    display: inline-block;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+}
+
+// Animações
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Estados de carregamento
+.loading {
+  text-align: center;
+  padding: $spacing-xl;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $light-gray;
+    border-top: 3px solid $primary-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsividade adicional
+@media (max-width: 480px) {
+  .missao-container {
+    padding: $spacing-sm;
+  }
+
+  .ponto-turistico {
+    padding: $spacing-sm $spacing-md;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+// Acessibilidade
+.btn:focus,
+input:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Estados visuais para pontos visitados
+.ponto-turistico.visitado {
+  border-left-color: $success-color;
+  background: linear-gradient(to right, rgba($success-color, 0.05), $white);
+}

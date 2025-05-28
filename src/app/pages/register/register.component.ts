@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import {RouterLink} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {Iregister} from '../../models/user';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -35,11 +36,26 @@ export class RegisterComponent {
       };
 
       this.apiService.register(payload).subscribe(
-        response => console.log('Sucesso', response),
-        error => console.error('Erro', error)
+        response => Swal.fire({
+          icon: 'success',
+          title: 'Cadastro realizado!',
+          text: 'Sua conta foi criada com sucesso.',
+          confirmButtonColor: '#3085d6'
+        }),
+        error => Swal.fire({
+          icon: 'error',
+          title: 'Erro ao cadastrar',
+          text: 'Não foi possível criar a conta. Verifique os dados ou tente novamente.',
+          confirmButtonColor: '#d33'
+        })
       );
     } else {
-      alert('Preencha os campos corretamente.');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Formulário inválido',
+        text: 'Preencha todos os campos corretamente.',
+        confirmButtonColor: '#f0ad4e'
+      });
     }
   }
 }
