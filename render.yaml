@@ -4,7 +4,8 @@ services:
     env: static
     staticPublishPath: dist/wikibel
     buildCommand: |
-      echo "export const environment = {
+      cat <<EOF > src/environments/environment.prod.ts
+      export const environment = {
         production: true,
         apiRegister: '${API_REGISTER}',
         apiLogin: '${API_LOGIN}',
@@ -13,6 +14,7 @@ services:
         getRoutes: '${GET_ROUTES}',
         createRoutes: '${CREATE_ROUTES}',
         deleteRoute: '${DELETE_ROUTE}'
-      };" > src/environments/environment.prod.ts
+      };
+      EOF
       npm install
       npm run build -- --configuration production
