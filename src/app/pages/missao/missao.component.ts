@@ -99,14 +99,14 @@ export class MissaoComponent implements OnInit {
   }
 
   gerarCupom() {
-    const numeroAleatorio = Math.floor(10000 + Math.random() * 9000); 
+    const numeroAleatorio = Math.floor(10000 + Math.random() * 9000);
     this.cupomGerado = `BELEM${numeroAleatorio}`;
-  
+
     const userId = localStorage.getItem('usuario_id');
     if (userId) {
       localStorage.setItem(`missaoConcluida_${userId}`, 'true');
     }
-  
-    alert(`Missão concluída! Seu cupom: ${this.cupomGerado}`);
+
+
   }
 }

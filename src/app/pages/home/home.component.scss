@@ -1,125 +1,138 @@
 .container {
   display: flex;
-  flex-direction: column; /* Agora empilha os filhos na vertical */
-  align-items: center;    /* Centraliza horizontalmente */
-  gap: 0.19rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   padding: 2rem;
+  padding-bottom:6rem ;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
-
-
 
 .text-box {
   border-radius: 1.2rem;
-  text-align: justify;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19.875rem;
-  height: 6.5rem;
-  padding: 1rem;
-  font-size: 1.5rem;
-  background: linear-gradient(90deg,rgba(46, 65, 89, 1) 41%, rgba(9, 9, 121, 1) 79%);
+  width: 90%;
+  max-width: 28rem;
+  min-height: 6.5rem;
+
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, rgba(46, 65, 89, 1) 41%, rgba(9, 9, 121, 1) 79%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-weight: 600;
 }
 
-.dic {
+.dic,
+.tourism,
+.culture,
+.partners {
   position: relative;
-  img {
-    width: 5.2rem;
-    height: 5.2rem;
-  }
+  width: 90%;
+  max-width: 28rem;
+  height: 7rem;
   color: white;
   text-align: start;
-  font-size: 2rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/BandeiraPara.png");
+  font-size: 1.4rem;
   background-size: cover;
   background-position: center;
-  width: 26.9rem;
-  height: 7rem;
-  transition: height 0.6s ease, background-image 0.4s ease;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  img {
+    width: 3.8rem;
+    height: 3.8rem;
+    margin-right: 1rem;
+  }
 
   &:hover {
-    height: 10rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/BandeiraPara.png");
+    height: 9.5rem;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Específicos por botão
+.dic {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/BandeiraPara.png");
+
+  &:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/assets/BandeiraPara.png");
   }
 }
 
 .tourism {
-  position: relative;
-  img {
-    width: 5.2rem;
-    height: 5.2rem;
-  }
-  color: white;
-  text-align: start;
-  font-size: 2rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/VerOPeso.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 26.9rem;
-  height: 7rem;
-  transition: height 0.6s ease, background-image 0.4s ease;
 
   &:hover {
-    height: 10rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/VerOPeso.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/assets/VerOPeso.jpg");
   }
 }
 
 .culture {
-  position: relative;
-  img {
-    width: 5.2rem;
-    height: 5.2rem;
-  }
-  color: white;
-  text-align: start;
-  font-size: 2rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/CulturaWIKIBEL.png");
-  background-size: cover;
-  background-position: center;
-  width: 26.9rem;
-  height: 7rem;
-  transition: height 0.6s ease, background-image 0.4s ease;
 
   &:hover {
-    height: 10rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/CulturaWIKIBEL.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/assets/CulturaWIKIBEL.png");
   }
 }
 
 .partners {
-  position: relative;
-  img {
-    width: 5.2rem;
-    height: 5.2rem;
-  }
-  color: white;
-  text-align: start;
-  font-size: 2rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/ParceirosWIKIBEL.png");
-  background-size: 210%; // aumenta a imagem
-  background-position: center;
-  width: 26.9rem;
-  height: 7rem;
-  transition: height 0.6s ease, background-image 0.4s ease;
+  background-size: 210%;
 
   &:hover {
-    height: 10rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/ParceirosWIKIBEL.png");
-    background-size: 210%; // aumenta a imagem
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/assets/ParceirosWIKIBEL.png");
+    background-size: 210%;
   }
 }
 
+// Responsivo
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-//.grid-container {
-//  display: grid;
-//  gap: 6rem;
-//  padding: 1rem;
-//  grid-template-columns: repeat(2, 1fr);
-//
-//}
+  .text-box {
+    font-size: 1.4rem;
+    width: 40%;
+  }
 
+  .dic,
+  .tourism,
+  .culture,
+  .partners {
+    font-size: 1.5rem;
+    width: 40%;
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-box {
+    font-size: 1.5rem;
+    width: 30%;
+  }
+
+  .dic,
+  .tourism,
+  .culture,
+  .partners {
+    width: 30%;
+    font-size: 1.6rem;
+  }
+}
