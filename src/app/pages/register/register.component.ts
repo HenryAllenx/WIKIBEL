@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import {RouterLink} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {Iregister} from '../../models/user';
+// @ts-ignore
 import Swal from 'sweetalert2';
 
 
