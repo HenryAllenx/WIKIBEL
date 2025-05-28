@@ -53,7 +53,7 @@ export const routes: Routes = [
   },
   {
     path:'Casa-11-Janelas',
-    loadComponent:()=> import('./pages/config/casa-janelas/casa-janelas.component')
+    loadComponent:()=> import('./pages/casa-janelas/casa-janelas.component')
   },
   {
     path:'Ver-o-Rio',

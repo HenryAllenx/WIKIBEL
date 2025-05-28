@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: wikibel-frontend
+    env: static
+    staticPublishPath: dist/wikibel
+    buildCommand: |
+      cat <<EOF > src/environments/environment.prod.ts
+      export const environment = {
+        production: true,
+        apiRegister: '${API_REGISTER}',
+        apiLogin: '${API_LOGIN}',
+        getUser: '${GET_USER}',
+        monument: '${MONUMENT}',
+        getRoutes: '${GET_ROUTES}',
+        createRoutes: '${CREATE_ROUTES}',
+        deleteRoute: '${DELETE_ROUTE}'
+      };
+      EOF
+      npm install
+      npm run build -- --configuration production

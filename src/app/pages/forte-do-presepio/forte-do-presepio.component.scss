@@ -1,64 +1,369 @@
+$primary-color: #1a365d;
+$secondary-color: #e53e3e;
+$accent-color: #d69e2e;
+$text-primary: #2d3748;
+$text-secondary: #4a5568;
+$background-light: #f7fafc;
+$background-white: #ffffff;
+$shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+$shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.2);
+$border-radius: 16px;
+$border-radius-lg: 24px;
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
 
-body {
-  font-family: 'Open Sans'; 
-    }
-  
-.tittle {
-    color: rgb(0, 0, 0);
-    font-size: 1em;
-    text-align: center;
-    margin: 0;
+// Container principal
+.basilica-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  background: linear-gradient(135deg, $background-light 0%, rgba($primary-color, 0.02) 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-md;
   }
 
-  .line {
-    border: black;
-    height: 4px;
-    margin: 10px 0;
+  @media (max-width: 480px) {
+    padding: $spacing-md $spacing-sm;
   }
- #firstParagraph   {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    margin-bottom: 2px;
-  }
-
-  #secondParagraph {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    margin-top: 1px;
-  }
-
-  .time p  {
-    margin: 15px;
-  }
-
-  h1, h2 {
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-  }
-
- .FortePicture {
- max-width: 100%;
- width: 2000px;
- height: 600px;
- }
-
-  .map  img {
-    max-width: 100%;
-  }
-
-#year {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
 }
 
+// Card principal do monumento
+.monumento-card {
+  background: $background-white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-strong;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color, $accent-color);
+  }
 
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  }
+}
 
-  
+// Título principal
+h1 {
+  color: $primary-color;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: $spacing-xl $spacing-lg $spacing-lg;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
 
-  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: $spacing-lg $spacing-md $spacing-md;
+  }
 
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+    padding: $spacing-md $spacing-sm $spacing-sm;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, $secondary-color, $accent-color);
+    border-radius: 2px;
+  }
+}
+
+// Container da imagem
+.image-container {
+  position: relative;
+  text-align: center;
+  padding: 0 $spacing-lg $spacing-lg;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0 $spacing-md $spacing-md;
+  }
+
+  img {
+    width: 100%;
+    max-width: 430px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: $shadow-medium;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid $background-white;
+
+    @media (max-width: 768px) {
+      height: 300px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      height: 250px;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // Overlay decorativo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 60%, rgba($primary-color, 0.02) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+// Container das informações
+.info-container {
+  padding: $spacing-lg $spacing-xl $spacing-xl;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md $spacing-lg $spacing-lg;
+  }
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm $spacing-md $spacing-md;
+  }
+}
+
+// Parágrafos de informação
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: $spacing-lg;
+  color: $text-secondary;
+  padding: $spacing-md;
+  background: rgba($background-light, 0.5);
+  border-radius: $border-radius;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: $spacing-sm $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  &:nth-child(1) {
+    border-left-color: $secondary-color;
+    background: linear-gradient(135deg, rgba($secondary-color, 0.08), rgba($secondary-color, 0.02));
+
+    &:hover {
+      background: linear-gradient(135deg, rgba($secondary-color, 0.12), rgba($secondary-color, 0.04));
+      transform: translateX(5px);
+    }
+  }
+
+  &:nth-child(2) {
+    border-left-color: $accent-color;
+    background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-color, 0.02));
+
+    &:hover {
+      background: linear-gradient(135deg, rgba($accent-color, 0.12), rgba($accent-color, 0.04));
+      transform: translateX(5px);
+    }
+  }
+
+  &:nth-child(3) {
+    border-left-color: #38a169;
+    background: linear-gradient(135deg, rgba(#38a169, 0.08), rgba(#38a169, 0.02));
+
+    &:hover {
+      background: linear-gradient(135deg, rgba(#38a169, 0.12), rgba(#38a169, 0.04));
+      transform: translateX(5px);
+    }
+  }
+
+  &:nth-child(4) {
+    border-left-color: #805ad5;
+    background: linear-gradient(135deg, rgba(#805ad5, 0.08), rgba(#805ad5, 0.02));
+
+    &:hover {
+      background: linear-gradient(135deg, rgba(#805ad5, 0.12), rgba(#805ad5, 0.04));
+      transform: translateX(5px);
+    }
+  }
+
+  strong {
+    color: $text-primary;
+    font-weight: 700;
+    font-size: 1.05em;
+    display: inline-block;
+    margin-bottom: $spacing-xs;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      opacity: 0.2;
+      margin-top: 2px;
+    }
+  }
+}
+
+// Estados de carregamento
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 1.2rem;
+  color: $text-secondary;
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba($primary-color, 0.1);
+    border-top: 4px solid $primary-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: $spacing-md;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Estado de erro
+.error {
+  text-align: center;
+  padding: $spacing-2xl;
+  color: $secondary-color;
+  font-size: 1.1rem;
+
+  &::before {
+    content: '⚠️';
+    display: block;
+    font-size: 3rem;
+    margin-bottom: $spacing-md;
+  }
+}
+
+// Animações de entrada
+.monumento-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Efeitos decorativos
+.info-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba($accent-color, 0.1), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+// Responsividade avançada
+@media (max-width: 1024px) {
+  .basilica-container {
+    padding: $spacing-lg;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-container img {
+    border-radius: $spacing-sm;
+    border-width: 2px;
+  }
+
+  .monumento-card {
+    border-radius: $border-radius;
+  }
+
+  h1 {
+    letter-spacing: 0;
+  }
+}
+
+// Modo escuro (opcional)
+@media (prefers-color-scheme: dark) {
+  .basilica-container {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  }
+
+  .monumento-card {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+
+  h1 {
+    color: #e2e8f0;
+  }
+
+  p {
+    background: rgba(#4a5568, 0.3);
+    color: #cbd5e0;
+
+    strong {
+      color: #e2e8f0;
+    }
+  }
+}
+
+// Melhorias de acessibilidade
+.monumento-card:focus-within {
+  outline: 3px solid rgba($primary-color, 0.5);
+  outline-offset: 2px;
+}
+
+// Indicador de interatividade
+.image-container {
+  cursor: zoom-in;
+
+  &:active img {
+    transform: scale(0.98);
+  }
+}

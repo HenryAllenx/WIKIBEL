@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import {ApiService} from '../../services/api.service';
 import {Ilogin} from '../../models/user';
 import {AuthService} from '../../services/auth.service';
-import Swal from 'sweetalert2';
+// @ts-ignore
+import {Swal} from 'sweetalert2';
 
 
 @Component({
