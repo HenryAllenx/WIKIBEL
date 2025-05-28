@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-mangal-garcas',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './mangal-garcas.component.html',
   styleUrl: './mangal-garcas.component.scss'

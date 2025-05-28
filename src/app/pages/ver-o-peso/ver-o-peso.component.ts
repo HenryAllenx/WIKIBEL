@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-ver-o-peso',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './ver-o-peso.component.html',
   styleUrl: './ver-o-peso.component.scss'

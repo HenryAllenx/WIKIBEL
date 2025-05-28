@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-theatro-da-paz',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './theatro-da-paz.component.html',
   styleUrl: './theatro-da-paz.component.scss'

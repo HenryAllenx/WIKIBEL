@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-museu-goeldi',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './museu-goeldi.component.html',
   styleUrl: './museu-goeldi.component.scss'

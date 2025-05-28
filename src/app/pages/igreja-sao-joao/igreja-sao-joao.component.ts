@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-igreja-sao-joao',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './igreja-sao-joao.component.html',
   styleUrl: './igreja-sao-joao.component.scss'

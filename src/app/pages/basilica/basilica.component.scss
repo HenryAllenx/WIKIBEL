@@ -35,6 +35,31 @@ $spacing-2xl: 3rem;
   }
 }
 
+.back-button {
+  background-color: #2e4159;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #1e2e40;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+
 // Card principal do monumento
 .monumento-card {
   background: $background-white;
@@ -180,7 +205,7 @@ p {
   &:nth-child(1) {
     border-left-color: $secondary-color;
     background: linear-gradient(135deg, rgba($secondary-color, 0.08), rgba($secondary-color, 0.02));
-    
+
     &:hover {
       background: linear-gradient(135deg, rgba($secondary-color, 0.12), rgba($secondary-color, 0.04));
       transform: translateX(5px);
@@ -190,7 +215,7 @@ p {
   &:nth-child(2) {
     border-left-color: $accent-color;
     background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-color, 0.02));
-    
+
     &:hover {
       background: linear-gradient(135deg, rgba($accent-color, 0.12), rgba($accent-color, 0.04));
       transform: translateX(5px);
@@ -200,7 +225,7 @@ p {
   &:nth-child(3) {
     border-left-color: #38a169;
     background: linear-gradient(135deg, rgba(#38a169, 0.08), rgba(#38a169, 0.02));
-    
+
     &:hover {
       background: linear-gradient(135deg, rgba(#38a169, 0.12), rgba(#38a169, 0.04));
       transform: translateX(5px);
@@ -210,7 +235,7 @@ p {
   &:nth-child(4) {
     border-left-color: #805ad5;
     background: linear-gradient(135deg, rgba(#805ad5, 0.08), rgba(#805ad5, 0.02));
-    
+
     &:hover {
       background: linear-gradient(135deg, rgba(#805ad5, 0.12), rgba(#805ad5, 0.04));
       transform: translateX(5px);
@@ -223,7 +248,7 @@ p {
     font-size: 1.05em;
     display: inline-block;
     margin-bottom: $spacing-xs;
-    
+
     &::after {
       content: '';
       display: block;
@@ -244,7 +269,7 @@ p {
   min-height: 400px;
   font-size: 1.2rem;
   color: $text-secondary;
-  
+
   &::before {
     content: '';
     width: 40px;
@@ -268,7 +293,7 @@ p {
   padding: $spacing-2xl;
   color: $secondary-color;
   font-size: 1.1rem;
-  
+
   &::before {
     content: '⚠️';
     display: block;
@@ -318,11 +343,11 @@ p {
     border-radius: $spacing-sm;
     border-width: 2px;
   }
-  
+
   .monumento-card {
     border-radius: $border-radius;
   }
-  
+
   h1 {
     letter-spacing: 0;
   }
@@ -333,20 +358,20 @@ p {
   .basilica-container {
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
   }
-  
+
   .monumento-card {
     background: #2d3748;
     color: #e2e8f0;
   }
-  
+
   h1 {
     color: #e2e8f0;
   }
-  
+
   p {
     background: rgba(#4a5568, 0.3);
     color: #cbd5e0;
-    
+
     strong {
       color: #e2e8f0;
     }
@@ -362,7 +387,7 @@ p {
 // Indicador de interatividade
 .image-container {
   cursor: zoom-in;
-  
+
   &:active img {
     transform: scale(0.98);
   }

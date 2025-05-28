@@ -6,6 +6,10 @@
 
   <!-- Card do monumento -->
   <div *ngIf="monumento" class="monumento-card">
+
+    <!-- Botão de Voltar -->
+    <button class="back-button" routerLink="/culture">⟵ Voltar</button>
+
     <!-- Título -->
     <h1>{{ monumento.name }}</h1>
 
