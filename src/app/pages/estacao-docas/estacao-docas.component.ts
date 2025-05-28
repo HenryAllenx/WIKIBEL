@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {NgIf} from '@angular/common';
 import {Imonument} from '../../models/monument';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-estacao-docas',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './estacao-docas.component.html',
   styleUrl: './estacao-docas.component.scss'

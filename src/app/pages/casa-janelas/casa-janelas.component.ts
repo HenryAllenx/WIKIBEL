@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Imonument } from '../../models/monument';
 import { ApiService } from '../../services/api.service';
 import { NgIf } from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-casa-janelas',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './casa-janelas.component.html',
   styleUrl: './casa-janelas.component.scss'

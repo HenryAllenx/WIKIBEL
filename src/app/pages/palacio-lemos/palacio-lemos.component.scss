@@ -60,6 +60,31 @@ $spacing-2xl: 3rem;
   }
 }
 
+
+.back-button {
+  background-color: #2e4159;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #1e2e40;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
 // Título principal
 h1 {
   color: $primary-color;

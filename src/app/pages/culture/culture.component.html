@@ -1,4 +1,10 @@
 <div class="culture-page">
+
+  <div class="back-button">
+    <button [routerLink]="'/home'">
+      ← Voltar para Início
+    </button>
+  </div>
   <div class="input-box">
     <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar">
     <img src="assets/search.svg" alt="buscar">
