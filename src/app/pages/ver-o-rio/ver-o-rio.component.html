@@ -1,14 +1,28 @@
-<div *ngIf="monumento">
-  <h1>{{ monumento.name }}</h1>
+<div class="basilica-container">
+  <!-- Estado de carregamento -->
+  <div *ngIf="!monumento" class="loading">
+    Carregando informações do monumento...
+  </div>
 
-  <img
-    [src]="'data:image/png;base64,' + monumento.image"
-    alt="{{ monumento.name }}"
-    style="width: 26.9rem; height: 25rem;" />
+  <!-- Card do monumento -->
+  <div *ngIf="monumento" class="monumento-card">
+    <!-- Título -->
+    <h1>{{ monumento.name }}</h1>
 
-  <p><strong>Ano de Fundação:</strong> {{ monumento.founding_year }}</p>
-  <p><strong>Bairro:</strong> {{ monumento.district }}</p>
-  <p><strong>Descrição:</strong> {{ monumento.description }}</p>
-  <p><strong>Horário de Funcionamento:</strong> {{ monumento.open_hours }}</p>
+    <!-- Container da imagem -->
+    <div class="image-container">
+      <img
+        [src]="'data:image/png;base64,' + monumento.image"
+        [alt]="monumento.name"
+        loading="lazy" />
+    </div>
+
+    <!-- Informações do monumento -->
+    <div class="info-container">
+      <p><strong>📅 Ano de Fundação:</strong> {{ monumento.founding_year }}</p>
+      <p><strong>📍 Bairro:</strong> {{ monumento.district }}</p>
+      <p><strong>📖 Descrição:</strong> {{ monumento.description }}</p>
+      <p><strong>🕒 Horário de Funcionamento:</strong> {{ monumento.open_hours }}</p>
+    </div>
+  </div>
 </div>
-

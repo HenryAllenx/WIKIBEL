@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Imonument } from '../../../models/monument';
-import { ApiService } from '../../../services/api.service';
+import { Imonument } from '../../models/monument';
+import { ApiService } from '../../services/api.service';
 import { NgIf } from '@angular/common';
 
 @Component({
