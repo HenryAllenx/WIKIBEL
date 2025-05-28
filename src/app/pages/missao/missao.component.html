@@ -1,0 +1,49 @@
+<div class="missao-container">
+    <h2>Missão: Bater foto em 3 pontos turísticos de Belém</h2>
+    
+    <div class="progresso">
+      Pontos visitados com foto: {{ visitados }}/3
+    </div>
+  
+    <div *ngFor="let ponto of pontosTuristicos" 
+         class="ponto-turistico" 
+         [class.visitado]="ponto.visitado">
+      
+      <h3>{{ ponto.nome }}</h3>
+      <p>{{ ponto.descricao }}</p>
+  
+      <!-- Verificação de localização -->
+      <button class="btn btn-primary" (click)="verificarLocalizacao()">
+        📍 Verificar Localização
+      </button>
+  
+      <!-- Upload de foto -->
+      <div *ngIf="!ponto.visitado" class="foto-upload">
+        <label for="foto-{{ ponto.id }}">📸 Bater Foto:</label>
+        <input
+          type="file"
+          accept="image/*"
+          capture="environment"
+          id="foto-{{ ponto.id }}"
+          (change)="onFotoSelecionada($event, ponto.id)"
+        />
+      </div>
+  
+      <!-- Mostrar a foto se já foi batida -->
+      <div *ngIf="fotos[ponto.id]" class="foto-registrada">
+        <p><strong>✅ Foto registrada!</strong></p>
+        <img [src]="fotos[ponto.id]" alt="Foto do ponto" width="200" />
+      </div>
+  
+      <hr />
+    </div>
+  
+    <!-- Mensagem de missão concluída -->
+    <div *ngIf="missaoConcluida" class="missao-concluida">
+      <h2>🎉 Missão Concluída! 🎉</h2>
+      <p>Parabéns! Você ganhou o seguinte cupom:</p>
+      <div class="cupom">
+        {{ cupomGerado }}
+      </div>
+    </div>
+  </div>
