@@ -13,7 +13,7 @@ import {RouterLink} from '@angular/router';
   templateUrl: './bosque-rodrigues.component.html',
   styleUrl: './bosque-rodrigues.component.scss'
 })
-export class BosqueRodriguesComponent {
+export default class BosqueRodriguesComponent {
   monumento: Imonument | null = null;
 
   constructor(private apiService: ApiService) {}

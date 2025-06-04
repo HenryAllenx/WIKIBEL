@@ -52,6 +52,10 @@ export const routes: Routes = [
     loadComponent:()=> import('././pages/basilica/basilica.component')
   },
   {
+    path:'Bosque-Rodrigues',
+    loadComponent:()=> import('./pages/bosque-rodrigues/bosque-rodrigues.component')
+  },
+  {
     path:'Casa-11-Janelas',
     loadComponent:()=> import('./pages/casa-janelas/casa-janelas.component')
   },
