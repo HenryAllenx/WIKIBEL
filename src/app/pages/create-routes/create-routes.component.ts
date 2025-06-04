@@ -23,6 +23,7 @@ export default class CreateRoutesComponent {
 
   pontosDisponiveis: PontoTuristico[] = [
     { id:'2', nome: 'Basílica de Nossa Senhora de Nazaré' },
+    { id:'21', nome: 'Bosque Rodrigues Alves e Jardim Botânico da Amazônia' },
     { id:'11', nome: 'Casa das 11 janelas' },
     { id:'19', nome: 'Complexo do Ver-o-Rio' },
     { id:'17', nome: 'Estação das docas'},

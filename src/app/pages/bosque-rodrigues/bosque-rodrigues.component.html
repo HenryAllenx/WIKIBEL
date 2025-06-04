@@ -1,0 +1,32 @@
+<div class="basilica-container">
+  <!-- Estado de carregamento -->
+  <div *ngIf="!monumento" class="loading">
+    Carregando informações do monumento...
+  </div>
+
+  <!-- Card do monumento -->
+  <div *ngIf="monumento" class="monumento-card">
+
+    <!-- Botão de Voltar -->
+    <button class="back-button" routerLink="/culture">⟵ Voltar</button>
+
+    <!-- Título -->
+    <h1>{{ monumento.name }}</h1>
+
+    <!-- Container da imagem -->
+    <div class="image-container">
+      <img
+        [src]="'data:image/png;base64,' + monumento.image"
+        [alt]="monumento.name"
+        loading="lazy" />
+    </div>
+
+    <!-- Informações do monumento -->
+    <div class="info-container">
+      <p><strong>📅 Ano de Fundação:</strong> {{ monumento.founding_year }}</p>
+      <p><strong>📍 Bairro:</strong> {{ monumento.district }}</p>
+      <p><strong>📖 Descrição:</strong> {{ monumento.description }}</p>
+      <p><strong>🕒 Horário de Funcionamento:</strong> {{ monumento.open_hours }}</p>
+    </div>
+  </div>
+</div>

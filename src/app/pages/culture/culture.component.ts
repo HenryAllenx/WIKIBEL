@@ -19,6 +19,7 @@ export default class CultureComponent {
 
   items: string[] = [
     'Basílica de Nossa Senhora de Nazaré',
+    'Bosque Rodrigues Alves e Jardim Botânico da Amazônia',
     'Casa das 11 janelas',
     'Complexo do Ver-o-Rio',
     'Estação das docas',
@@ -42,6 +43,7 @@ export default class CultureComponent {
 
   links: { [key: string]: string } = {
     'Basílica de Nossa Senhora de Nazaré': '/Basilica-de-Nazaré',
+    'Bosque Rodrigues Alves e Jardim Botânico da Amazônia': 'BosqueRodrigues',
     'Casa das 11 janelas': '/Casa-11-Janelas',
     'Complexo do Ver-o-Rio': '/Ver-o-Rio',
     'Estação das docas': '/Estacao-Docas',
