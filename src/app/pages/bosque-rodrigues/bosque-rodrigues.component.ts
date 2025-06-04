@@ -23,7 +23,7 @@ export default class BosqueRodriguesComponent {
   }
 
   getMonument(){
-    const id = 11; // ID fixo desse monumento
+    const id = 21; // ID fixo desse monumento
     this.apiService.getMonumentoById(id).subscribe({
       next: (res) => {
         this.monumento = res;
