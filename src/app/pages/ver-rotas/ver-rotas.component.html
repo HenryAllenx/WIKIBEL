@@ -2,7 +2,7 @@
   <h1>Detalhes da Rota</h1>
 
   <div *ngIf="rota; else rotaNaoEncontrada">
-    <h2>{{ rotasService.getNomeDaRota(rota.id) }}</h2>
+    <h2>{{ rota.name }}</h2>
     <p>ID da Rota: {{ rota.id }}</p>
     <p>ID do Membro: {{ rota.member_id }}</p>
 
