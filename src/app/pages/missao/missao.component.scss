@@ -119,7 +119,7 @@ h2 {
 
   &.btn-primary {
     background: linear-gradient(135deg, $primary-color, $primary-color, 10%);
-    color: $white;
+    color: black;
 
     &:hover {
       background: linear-gradient(135deg, $primary-color, 5%, $primary-color, 15%);
