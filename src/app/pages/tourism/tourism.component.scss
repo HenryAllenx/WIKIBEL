@@ -74,6 +74,10 @@ span {
   width: 100%;
   box-sizing: border-box;
   min-height: 2.5rem;
+  margin-top: 1rem;
+  height: 3.5rem;
+  transition: background 0.3s ease-in-out;
+  position: relative;
 }
 .rota-nome {
   color: #056D88;
