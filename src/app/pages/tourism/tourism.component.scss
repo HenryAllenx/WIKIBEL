@@ -5,21 +5,25 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
 }
 
 .add-route {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   border: 3px dashed #056D88;
-  width: 25rem;
+  width: 100%;
+  max-width: 400px;
   height: 3rem;
   border-radius: 0.5rem;
 }
 
 button {
   color: #056D88;
-  width: 23rem;
+  width: 100%;
+  max-width: 370px;
   border-radius: 0.5rem;
   border: none;
   background: transparent;
@@ -37,14 +41,16 @@ span {
 
 .title {
   color: #056D88;
-  width: 25rem;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   justify-content: flex-start;
   padding-left: 1rem;
 }
 
 .rotas-list {
-  width: 25rem;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -56,8 +62,7 @@ span {
   justify-content: space-between;
   padding: 0 1rem;
   margin-top: 1rem;
-  width: 23rem;
-  height: 3.5rem;
+  width: 100%;
   background: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid grey;
@@ -102,15 +107,20 @@ span {
   max-width: 10rem;
 }
 
-// Responsividade
-
+/* Responsivo */
 @media (max-width: 768px) {
-  .add-route,
-  .title,
-  .rotas-list,
-  .rotas-list .rota-item,
-  button {
-    width: 90%;
+  .back-button {
+    justify-content: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rotas-list .rota-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
   }
 
   .rota-nome {
@@ -118,42 +128,14 @@ span {
   }
 
   .excluir-btn {
-    font-size: 1.3rem;
+    align-self: flex-end;
+    font-size: 1.2rem;
+    margin-left: 0;
   }
 
-  .back-button {
-    max-width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
   .add-route,
   .title,
-  .rotas-list,
-  .rotas-list .rota-item,
   button {
-    width: 100%;
-  }
-
-  .rota-nome {
-    font-size: 0.9rem;
-  }
-
-  .excluir-btn {
-    font-size: 1.2rem;
-    margin-left: 0.5rem;
-  }
-
-  .rotas-list .rota-item {
-    padding: 0 0.75rem;
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .back-button {
-    justify-content: center;
+    padding: 0 1rem;
   }
 }
