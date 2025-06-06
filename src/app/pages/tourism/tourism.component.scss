@@ -64,28 +64,34 @@ span {
 
 .rotas-list .rota-item {
   display: flex;
+  /* Garante que os itens estarão alinhados verticalmente no centro */
   align-items: center;
+  /* Distribui o espaço entre o nome e o botão */
   justify-content: space-between;
-  padding: 0.25rem 0.75rem; /* menos padding vertical */
+  padding: 0.75rem 1rem; /* Ajustei o padding para um pouco mais de espaço vertical */
   background: white;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); /* sombra mais sutil */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   border: 1px solid #ccc;
   border-radius: 0.75rem;
   width: 100%;
   box-sizing: border-box;
-  min-height: 2.5rem;
+  /* Removi min-height e height fixos aqui para permitir que o conteúdo dite o tamanho */
+  /* min-height: 2.5rem; */
+  /* height: 3.5rem; */
   margin-top: 1rem;
-  height: 3.5rem;
   transition: background 0.3s ease-in-out;
   position: relative;
 }
+
 .rota-nome {
   color: #056D88;
   font-weight: bold;
   font-size: 0.95rem;
-  flex: 1;
+  flex: 1; /* Permite que o nome ocupe o espaço disponível */
   cursor: pointer;
   margin: 0;
+  /* Adicione text-align: left; se quiser que o texto sempre comece à esquerda */
+  /* text-align: left; */
 }
 
 .excluir-btn {
@@ -94,13 +100,16 @@ span {
   color: red;
   font-size: 1.5rem;
   cursor: pointer;
-  margin-left: 1rem;
+  /* Ajustei a margem para separar um pouco mais do nome */
+  margin-left: 1.5rem;
   width: 2rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s;
+  /* Garante que o botão não encolha em telas menores */
+  flex-shrink: 0;
 }
 
 .excluir-btn:hover {
@@ -128,18 +137,21 @@ span {
 
 @media (max-width: 480px) {
   .rotas-list .rota-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    /* Mantenha como row para manter nome e botão na mesma linha se possível */
+    flex-direction: row; /* Alterado de 'column' para 'row' */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Mantém nome e botão nas extremidades */
+    padding: 0.75rem 1rem;
   }
 
   .rota-nome {
     font-size: 0.9rem;
+    /* Remover margin-left: 0; e align-self: flex-end; se for o caso */
   }
 
   .excluir-btn {
     font-size: 1.2rem;
-    margin-left: 0;
-    align-self: flex-end;
+    margin-left: 0.5rem; /* Ajuste a margem para menor espaçamento em telas pequenas */
+    /* Remover align-self: flex-end; se for o caso */
   }
 }
